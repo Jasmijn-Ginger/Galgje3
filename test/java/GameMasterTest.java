@@ -1,18 +1,18 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-public class PrintTest {
+public class GameMasterTest {
 
     GalgjeWord galgjeWord = new GalgjeWord();
-    Print print = new Print();
+    GameMaster GameMasterTest = new GameMaster();
 
     @Test
     public void displayEmptyLines(){
         //Given
         char[] expectedOutcome = {'_', '_', '_', '_', '_'};
-        print.setEmptyLines(GalgjeWord.wordToBeGuessed);
+        GameMasterTest.setEmptyLines(GalgjeWord.wordToBeGuessed);
         //When
-        char [] result = print.emptyLines;
+        char [] result = GameMasterTest.emptyLines;
         //Then
         Assertions.assertEquals(new String(expectedOutcome), new String(result));
     }

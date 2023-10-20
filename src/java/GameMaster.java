@@ -1,7 +1,8 @@
-public class Print {
+public class GameMaster {
 
     GalgjeWord galgjeWord = new GalgjeWord();
     public char[] emptyLines = new char[getGalgjeWord().length()];
+    String[] listGuessedLetters = {};
 
     public String getGalgjeWord(){
         galgjeWord.createGalgjeWord();
