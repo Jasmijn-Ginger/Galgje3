@@ -1,35 +1,21 @@
 import org.junit.jupiter.api.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class InputUserTest {
 
-    private static final PrintStream standardOut = System.out;
-    private static final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
-    @BeforeAll
-    public static void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
+    void provideInput(String data) {
+        ByteArrayInputStream testIn = new ByteArrayInputStream(data.getBytes());
+        System.setIn(testIn);
     }
 
-    @AfterAll
-    public static void tearDown() {
-        System.setOut(standardOut);
+    @Test
+    void givenName_whenReadFromInput_thenReturnCorrectResult() {
+        provideInput("a");
+        String input = InputUser.getInputUser();
+        Assertions.assertEquals("A", input);
     }
-
-    @BeforeEach
-    public void clearOutputStreamBuffer(){
-        outputStreamCaptor.reset();
-    }
-
-    InputUser inputUser = new InputUser();
-
-//    @Test
-//    public void chosenLetterTest(){
-//        //Given
-//        inputUser.getInputUser();
-//
-//        Assertions.assertEquals("A", inputUser.getInputUser());
-//    }
 }

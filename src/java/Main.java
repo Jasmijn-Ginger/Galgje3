@@ -11,9 +11,10 @@ public class Main {
 //        System.out.println(galgjeWord.arrayWordToBeGuessed());
 //        System.out.println(word.toCharArray());
 //
-//        InputUser inputUser = new InputUser();
-//
-//        System.out.println(inputUser.getInputUser());
+        InputUser inputUser = new InputUser();
+
+        System.out.println(InputUser.getInputUser());
+
 
 
     }

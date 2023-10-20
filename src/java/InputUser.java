@@ -1,11 +1,16 @@
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class InputUser {
 
-
-    public String getInputUser() {
-        Scanner ChooseALetter = new Scanner(System.in);
-        System.out.print("\nWhich letter do you want to guess? ");
-        return ChooseALetter.next();
+    public static String getInputUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which letter do you want to guess? ");
+        String input = scanner.next();
+        return input.toUpperCase();
     }
+
+
+
 }
