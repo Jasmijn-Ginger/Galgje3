@@ -4,14 +4,13 @@ import org.junit.jupiter.api.Test;
 public class GalgjeWordTest {
 
     GalgjeWord galgjeWord = new GalgjeWord();
+    public String givenGalgjeWord = "groen";
     @Test
     public void CreateGalgjewordTest(){
-        //Given
-        String expectedOutcome = "groen";
         //When
         String expectedResult = galgjeWord.createGalgjeWord();
         //Then
-        Assertions.assertEquals(expectedOutcome, expectedResult);
+        Assertions.assertEquals(givenGalgjeWord, expectedResult);
     }
 
     @Test

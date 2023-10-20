@@ -14,4 +14,13 @@ public class GameMaster {
             emptyLines[i] = '_';
         }
     }
+
+    public String welcomMessage(){
+        return "Welkom bij Galgje. Je kan 10 fouten maken om het woord te raden. Succes!";
+    }
+
+
+    public void loop() {
+        System.out.println("Dit moet er staan");
+    }
 }
