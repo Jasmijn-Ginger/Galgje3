@@ -20,7 +20,12 @@ public class GameMaster {
     }
 
 
-    public void loop() {
-        System.out.println("Dit moet er staan");
+    public void letterInWord(String letter, String word) {
+        if (word.contains(letter)){
+            System.out.println("Jeej, the letter is in the word");
+        }
+        else{
+            System.out.println("Too bad. Try again");
+        }
     }
 }

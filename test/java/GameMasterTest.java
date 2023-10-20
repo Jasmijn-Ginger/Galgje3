@@ -42,10 +42,15 @@ public class GameMasterTest {
     }
 
     @Test
-    public void loopTest(){
-        gameMaster.loop();
-        Assertions.assertEquals("Dit moet er staan", outputStreamCaptor.toString().trim());
+    public void trueLetterInWordTest(){
+        gameMaster.letterInWord("o", galgjeWordTest.givenGalgjeWord);
+        Assertions.assertEquals("Jeej, the letter is in the word", outputStreamCaptor.toString().trim());
+    }
 
+    @Test
+    void falseLetterInWordTest(){
+        gameMaster.letterInWord("a", galgjeWordTest.givenGalgjeWord);
+        Assertions.assertEquals("Too bad. Try again", outputStreamCaptor.toString().trim());
     }
 
 
