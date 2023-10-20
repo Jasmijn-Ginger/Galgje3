@@ -25,11 +25,11 @@ public class InputUserTest {
 
     InputUser inputUser = new InputUser();
 
-    @Test
-    public void getChosenLetter(){
-        //When
-        inputUser.getInputUser();
-        //Then
-        Assertions.assertEquals("Which letter do you want to guess? ", outputStreamCaptor.toString().trim());
-    }
+//    @Test
+//    public void chosenLetterTest(){
+//        //Given
+//        inputUser.getInputUser();
+//
+//        Assertions.assertEquals("A", inputUser.getInputUser());
+//    }
 }

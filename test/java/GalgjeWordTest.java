@@ -9,21 +9,21 @@ public class GalgjeWordTest {
         //Given
         String expectedOutcome = "groen";
         //When
-        String result = galgjeWord.createGalgjeWord();
+        String expectedResult = galgjeWord.createGalgjeWord();
         //Then
-        Assertions.assertEquals(expectedOutcome, result);
+        Assertions.assertEquals(expectedOutcome, expectedResult);
     }
 
     @Test
-    public void GalgjeWordArray(){
+    public void GalgjeWordArrayTest(){
         //Given
         char[] expectedOutcome = {'g', 'r', 'o', 'e', 'n'};
         galgjeWord.createGalgjeWord();
         galgjeWord.arrayWordToBeGuessed();
         //When
-        char[] result = galgjeWord.arrayWordToBeGuessed();
+        char[] expectedResult = galgjeWord.arrayWordToBeGuessed();
         //Then
-        Assertions.assertEquals(new String(expectedOutcome), new String(result));
+        Assertions.assertEquals(new String(expectedOutcome), new String(expectedResult));
     }
 
 
