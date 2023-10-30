@@ -1,20 +1,14 @@
 public class Main {
 
     public static void main(String[] args) {
-
-//        String word = "geel";
-//
-//        GalgjeWord galgjeWord = new GalgjeWord();
-//        galgjeWord.createGalgjeWord();
-//        galgjeWord.arrayWordToBeGuessed();
-////        System.out.println(GalgjeWord.wordToBeGuessed);
-//        System.out.println(galgjeWord.arrayWordToBeGuessed());
-//        System.out.println(word.toCharArray());
-//
-        InputUser inputUser = new InputUser();
-
-        System.out.println(InputUser.getInputUser());
-
+        PlayGalgje playGalgje = new PlayGalgje();
+        playGalgje.InitializeGame();
+        if (InputUser.getAnswer().equals("YES")){
+            playGalgje.InitializeGame();
+        }
+        if (InputUser.getAnswer().equals("NO")){
+            System.out.println("Byebye");
+        }
 
 
     }

@@ -28,7 +28,7 @@ public class GameTest {
         //When
         game.gameWon();
         //Then
-        Assertions.assertEquals("gewonnen", outputStreamCaptor.toString().trim());
+        Assertions.assertEquals("Gefeliciteerd je hebt gewonnen! Het woord was: " + GalgjeWord.wordToBeGuessed, outputStreamCaptor.toString().trim());
         Assertions.assertNotEquals("verloren", outputStreamCaptor.toString().trim());
 
     }
@@ -38,7 +38,7 @@ public class GameTest {
         //When
         game.gameLost();
         //Then
-        Assertions.assertEquals("verloren", outputStreamCaptor.toString().trim());
+        Assertions.assertEquals("Helaas, je hebt verloren. Het woord was: " + GalgjeWord.wordToBeGuessed, outputStreamCaptor.toString().trim());
         Assertions.assertNotEquals("gewonnen", outputStreamCaptor.toString().trim());
     }
 

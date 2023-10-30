@@ -1,57 +1,55 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class GameMasterTest {
 
-    GalgjeWord galgjeWord = new GalgjeWord();
-    GameMaster gameMaster = new GameMaster();
-    GalgjeWordTest galgjeWordTest = new GalgjeWordTest();
-    InputUser inputUser = new InputUser();
-
-
-
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+
+    public String givenGalgjeWord = "groen";
+    GameMaster gameMaster = new GameMaster(givenGalgjeWord);
 
     @BeforeEach
     public void setUp() {
         System.setOut(new PrintStream(outputStreamCaptor));
     }
-
     @AfterEach
     public void tearDown() {
         System.setOut(standardOut);
     }
 
-
-
     @Test
     public void displayEmptyLines(){
         //Given
         char[] expectedOutcome = {'_', '_', '_', '_', '_'};
-        gameMaster.setEmptyLines(GalgjeWord.wordToBeGuessed);
+        gameMaster.setEmptyLines();
         //When
-        char [] result = gameMaster.emptyLines;
+        char [] result = gameMaster.setEmptyLines();
         //Then
         Assertions.assertEquals(new String(expectedOutcome), new String(result));
     }
 
     @Test
     public void trueLetterInWordTest(){
-        gameMaster.letterInWord("o", galgjeWordTest.givenGalgjeWord);
-        Assertions.assertEquals("Jeej, the letter is in the word", outputStreamCaptor.toString().trim());
+        Assertions.assertTrue(gameMaster.letterInWord("O"));
+        Assertions.assertFalse(gameMaster.letterInWord("o"));
     }
 
     @Test
     void falseLetterInWordTest(){
-        gameMaster.letterInWord("a", galgjeWordTest.givenGalgjeWord);
-        Assertions.assertEquals("Too bad. Try again", outputStreamCaptor.toString().trim());
+        gameMaster.letterInWord("a");
+        Assertions.assertEquals("Too bad, the letter you chose is not in the word. Try again", outputStreamCaptor.toString().trim());
     }
+
+    @Test
+    void welcomeMessageTest(){
+        Assertions.assertEquals("Welkom bij Galgje. Je kan 10 fouten maken om het woord te raden. Succes!", gameMaster.welcomMessage());
+    }
+
+
 
 
 }

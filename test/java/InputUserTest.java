@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+
 
 public class InputUserTest {
 
@@ -17,5 +16,12 @@ public class InputUserTest {
         provideInput("a");
         String input = InputUser.getInputUser();
         Assertions.assertEquals("A", input);
+    }
+
+    @Test
+    void getAnswerTest(){
+        provideInput("yes");
+        String input = InputUser.getAnswer();
+        Assertions.assertEquals("YES", input);
     }
 }

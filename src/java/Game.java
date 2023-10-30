@@ -7,11 +7,11 @@ public class Game {
     }
 
     public void gameWon() {
-        System.out.println("gewonnen");
+        System.out.println("Gefeliciteerd je hebt gewonnen! Het woord was: " + GalgjeWord.wordToBeGuessed);
     }
 
     public void gameLost() {
-        System.out.println("verloren");
+        System.out.println("Helaas, je hebt verloren. Het woord was: " + GalgjeWord.wordToBeGuessed);
     }
 
 
